@@ -234,6 +234,18 @@ body {
     animation: fadeIn 1s ease-out 1s both;
 }
 
+.nickname {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    color: var(--gold-light);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    opacity: 0.8;
+    animation: fadeIn 1.5s ease-out 1.5s both;
+    text-shadow: 0 0 20px rgba(201, 168, 76, 0.4);
+}
+
 .scroll-hint {
     font-size: 0.9em;
     color: var(--text-muted);
@@ -712,6 +724,15 @@ body {
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.footer-nickname {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    color: var(--gold-light);
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+    opacity: 0.7;
 }
 
 .footer-names {
