@@ -16,31 +16,177 @@
         </div>
     </div>
 
-    <!-- Floating Particles -->
+    <!-- Floating Petals -->
     <canvas id="particles"></canvas>
+
+    <!-- Floral Corner Decorations (fixed) -->
+    <div class="floral-corner floral-top-left">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.25" fill="none" stroke="#c9a84c" stroke-width="1.2">
+                <path d="M10,190 Q10,100 60,60 Q30,80 10,80"/>
+                <path d="M10,190 Q30,120 80,80 Q50,90 30,100"/>
+                <path d="M10,190 Q50,140 100,110 Q70,110 50,120"/>
+                <circle cx="60" cy="60" r="8" fill="rgba(201,168,76,0.15)" stroke="#c9a84c"/>
+                <circle cx="80" cy="80" r="6" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
+                <circle cx="100" cy="110" r="5" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
+                <path d="M55,55 Q60,45 65,55 Q60,50 55,55Z" fill="rgba(201,168,76,0.2)"/>
+                <path d="M50,60 Q60,50 70,60 Q60,55 50,60Z" fill="rgba(201,168,76,0.15)"/>
+                <path d="M75,75 Q80,65 85,75 Q80,70 75,75Z" fill="rgba(201,168,76,0.15)"/>
+                <path d="M95,105 Q100,95 105,105 Q100,100 95,105Z" fill="rgba(201,168,76,0.12)"/>
+                <path d="M30,140 Q35,130 40,140" stroke-width="0.8"/>
+                <path d="M20,160 Q25,150 30,160" stroke-width="0.8"/>
+                <circle cx="35" cy="135" r="3" fill="rgba(180,140,80,0.15)"/>
+                <circle cx="25" cy="155" r="2.5" fill="rgba(180,140,80,0.12)"/>
+            </g>
+        </svg>
+    </div>
+    <div class="floral-corner floral-top-right">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.25" fill="none" stroke="#c9a84c" stroke-width="1.2" transform="scale(-1,1) translate(-200,0)">
+                <path d="M10,190 Q10,100 60,60 Q30,80 10,80"/>
+                <path d="M10,190 Q30,120 80,80 Q50,90 30,100"/>
+                <path d="M10,190 Q50,140 100,110 Q70,110 50,120"/>
+                <circle cx="60" cy="60" r="8" fill="rgba(201,168,76,0.15)" stroke="#c9a84c"/>
+                <circle cx="80" cy="80" r="6" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
+                <circle cx="100" cy="110" r="5" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
+                <path d="M55,55 Q60,45 65,55 Q60,50 55,55Z" fill="rgba(201,168,76,0.2)"/>
+                <path d="M50,60 Q60,50 70,60 Q60,55 50,60Z" fill="rgba(201,168,76,0.15)"/>
+                <path d="M75,75 Q80,65 85,75 Q80,70 75,75Z" fill="rgba(201,168,76,0.15)"/>
+                <path d="M95,105 Q100,95 105,105 Q100,100 95,105Z" fill="rgba(201,168,76,0.12)"/>
+                <path d="M30,140 Q35,130 40,140" stroke-width="0.8"/>
+                <path d="M20,160 Q25,150 30,160" stroke-width="0.8"/>
+                <circle cx="35" cy="135" r="3" fill="rgba(180,140,80,0.15)"/>
+                <circle cx="25" cy="155" r="2.5" fill="rgba(180,140,80,0.12)"/>
+            </g>
+        </svg>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-overlay"></div>
         <div class="islamic-border-top"></div>
+
+        <!-- Floral divider SVG at top of hero -->
+        <div class="floral-divider-hero">
+            <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg" width="300">
+                <g fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5">
+                    <path d="M200,50 Q180,30 160,35 Q170,25 185,28 Q175,15 190,20 Q195,5 200,20 Q205,5 210,20 Q225,15 215,28 Q230,25 240,35 Q220,30 200,50Z"/>
+                    <circle cx="200" cy="18" r="4" fill="rgba(201,168,76,0.2)"/>
+                    <path d="M160,35 Q140,38 120,35 Q135,30 145,33" stroke-width="0.8"/>
+                    <path d="M240,35 Q260,38 280,35 Q265,30 255,33" stroke-width="0.8"/>
+                    <circle cx="160" cy="35" r="3" fill="rgba(201,168,76,0.12)"/>
+                    <circle cx="240" cy="35" r="3" fill="rgba(201,168,76,0.12)"/>
+                    <path d="M120,35 Q100,32 80,35" stroke-width="0.6"/>
+                    <path d="M280,35 Q300,32 320,35" stroke-width="0.6"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="hero-content">
             <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
             <p class="bismillah-translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
-            <div class="divider-ornament">
-                <span class="ornament-line"></span>
-                <span class="ornament-diamond">&#9670;</span>
-                <span class="ornament-line"></span>
+
+            <div class="floral-divider">
+                <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg" width="220">
+                    <g fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.6">
+                        <path d="M0,15 Q75,15 110,15"/>
+                        <path d="M300,15 Q225,15 190,15"/>
+                        <path d="M140,15 Q150,5 150,15 Q150,25 160,15"/>
+                        <circle cx="150" cy="15" r="3" fill="rgba(201,168,76,0.25)"/>
+                        <path d="M130,12 Q135,8 140,12" stroke-width="0.6"/>
+                        <path d="M160,12 Q165,8 170,12" stroke-width="0.6"/>
+                    </g>
+                </svg>
             </div>
+
             <p class="invite-line">Together with the blessings of Allah, we invite you to celebrate the union of</p>
+
+            <!-- Muslim Couple Illustration -->
+            <div class="couple-illustration">
+                <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" width="220">
+                    <!-- Groom -->
+                    <g transform="translate(90, 30)">
+                        <!-- Body / Thobe -->
+                        <path d="M30,90 Q30,70 25,100 L15,180 Q30,185 45,180 L35,100 Q30,70 30,90Z" fill="rgba(201,168,76,0.12)" stroke="#c9a84c" stroke-width="1"/>
+                        <!-- Head -->
+                        <circle cx="30" cy="65" r="22" fill="rgba(232,212,180,0.2)" stroke="#c9a84c" stroke-width="1"/>
+                        <!-- Topi / Prayer Cap -->
+                        <path d="M12,58 Q12,42 30,40 Q48,42 48,58" fill="rgba(201,168,76,0.15)" stroke="#c9a84c" stroke-width="1"/>
+                        <line x1="12" y1="58" x2="48" y2="58" stroke="#c9a84c" stroke-width="0.8"/>
+                        <!-- Topi pattern -->
+                        <path d="M20,50 L20,58" stroke="#c9a84c" stroke-width="0.4" opacity="0.5"/>
+                        <path d="M30,48 L30,58" stroke="#c9a84c" stroke-width="0.4" opacity="0.5"/>
+                        <path d="M40,50 L40,58" stroke="#c9a84c" stroke-width="0.4" opacity="0.5"/>
+                        <!-- Eyes -->
+                        <circle cx="23" cy="68" r="1.5" fill="#c9a84c"/>
+                        <circle cx="37" cy="68" r="1.5" fill="#c9a84c"/>
+                        <!-- Smile -->
+                        <path d="M25,76 Q30,80 35,76" fill="none" stroke="#c9a84c" stroke-width="0.8"/>
+                        <!-- Beard hint -->
+                        <path d="M20,78 Q30,88 40,78" fill="none" stroke="#c9a84c" stroke-width="0.6" opacity="0.4"/>
+                    </g>
+                    <!-- Bride -->
+                    <g transform="translate(155, 30)">
+                        <!-- Body / Dress -->
+                        <path d="M30,90 Q20,110 10,180 Q30,190 50,180 Q40,110 30,90Z" fill="rgba(201,168,76,0.1)" stroke="#c9a84c" stroke-width="1"/>
+                        <!-- Dress floral detail -->
+                        <circle cx="25" cy="140" r="3" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                        <circle cx="35" cy="155" r="2.5" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                        <!-- Head -->
+                        <circle cx="30" cy="65" r="22" fill="rgba(232,212,180,0.2)" stroke="#c9a84c" stroke-width="1"/>
+                        <!-- Hijab -->
+                        <path d="M8,65 Q8,38 30,35 Q52,38 52,65 Q52,80 45,90 Q30,95 15,90 Q8,80 8,65Z" fill="rgba(201,168,76,0.12)" stroke="#c9a84c" stroke-width="1"/>
+                        <!-- Hijab drape -->
+                        <path d="M15,90 Q10,100 8,115" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
+                        <path d="M45,90 Q50,100 52,115" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
+                        <!-- Eyes -->
+                        <circle cx="23" cy="68" r="1.5" fill="#c9a84c"/>
+                        <circle cx="37" cy="68" r="1.5" fill="#c9a84c"/>
+                        <!-- Eyelashes -->
+                        <path d="M20,66 L22,67" stroke="#c9a84c" stroke-width="0.5"/>
+                        <path d="M38,67 L40,66" stroke="#c9a84c" stroke-width="0.5"/>
+                        <!-- Smile -->
+                        <path d="M25,76 Q30,80 35,76" fill="none" stroke="#c9a84c" stroke-width="0.8"/>
+                    </g>
+                    <!-- Heart between them -->
+                    <g transform="translate(132, 100)">
+                        <path d="M8,4 Q8,0 4,0 Q0,0 0,4 Q0,8 8,14 Q16,8 16,4 Q16,0 12,0 Q8,0 8,4Z" fill="rgba(201,168,76,0.3)" stroke="#c9a84c" stroke-width="0.8"/>
+                    </g>
+                    <!-- Small flowers around couple -->
+                    <g opacity="0.4">
+                        <circle cx="70" cy="60" r="4" fill="none" stroke="#c9a84c" stroke-width="0.6"/>
+                        <circle cx="70" cy="60" r="1.5" fill="rgba(201,168,76,0.2)"/>
+                        <circle cx="210" cy="55" r="3.5" fill="none" stroke="#c9a84c" stroke-width="0.6"/>
+                        <circle cx="210" cy="55" r="1.2" fill="rgba(201,168,76,0.2)"/>
+                        <circle cx="65" cy="170" r="3" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+                        <circle cx="215" cy="165" r="3" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+                        <!-- Tiny leaves -->
+                        <path d="M60,65 Q55,70 50,65" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+                        <path d="M220,60 Q225,65 230,60" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+                    </g>
+                    <!-- Names under illustration -->
+                    <text x="140" y="220" text-anchor="middle" font-family="Great Vibes, cursive" font-size="16" fill="#c9a84c" opacity="0.6">Sadath &amp; Shaiba</text>
+                </svg>
+            </div>
+
             <h1 class="groom-name reveal-text">Sadath</h1>
             <p class="ampersand">&</p>
             <h1 class="bride-name reveal-text">Shaiba</h1>
             <p class="nickname">#SaSha</p>
-            <div class="divider-ornament">
-                <span class="ornament-line"></span>
-                <span class="ornament-diamond">&#9670;</span>
-                <span class="ornament-line"></span>
+
+            <div class="floral-divider">
+                <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg" width="220">
+                    <g fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.6">
+                        <path d="M0,15 Q75,15 110,15"/>
+                        <path d="M300,15 Q225,15 190,15"/>
+                        <path d="M140,15 Q150,5 150,15 Q150,25 160,15"/>
+                        <circle cx="150" cy="15" r="3" fill="rgba(201,168,76,0.25)"/>
+                        <path d="M130,12 Q135,8 140,12" stroke-width="0.6"/>
+                        <path d="M160,12 Q165,8 170,12" stroke-width="0.6"/>
+                    </g>
+                </svg>
             </div>
+
             <p class="scroll-hint">Scroll down to explore</p>
             <div class="scroll-arrow">
                 <span></span>
@@ -54,6 +200,12 @@
     <!-- Quran Verse Section -->
     <section class="quran-section" id="quran">
         <div class="geometric-bg"></div>
+        <div class="section-flowers">
+            <div class="flower flower-1"></div>
+            <div class="flower flower-2"></div>
+            <div class="flower flower-3"></div>
+            <div class="flower flower-4"></div>
+        </div>
         <div class="quran-content fade-in">
             <div class="islamic-frame">
                 <p class="quran-arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
@@ -63,8 +215,69 @@
         </div>
     </section>
 
+    <!-- Engagement Section -->
+    <section class="engagement-section" id="engagement">
+        <div class="section-flowers">
+            <div class="flower flower-5"></div>
+            <div class="flower flower-6"></div>
+        </div>
+        <div class="section-header fade-in">
+            <div class="ornament-star">&#10022;</div>
+            <h2>Our Engagement</h2>
+            <div class="ornament-star">&#10022;</div>
+        </div>
+        <div class="engagement-content fade-in">
+            <!-- Ring Exchange Illustration -->
+            <div class="ring-illustration">
+                <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" width="220">
+                    <!-- Left ring -->
+                    <ellipse cx="95" cy="90" rx="35" ry="40" fill="none" stroke="#c9a84c" stroke-width="2.5" opacity="0.8"/>
+                    <ellipse cx="95" cy="90" rx="30" ry="35" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+                    <!-- Right ring (interlocking) -->
+                    <ellipse cx="145" cy="90" rx="35" ry="40" fill="none" stroke="#e8d48b" stroke-width="2.5" opacity="0.8"/>
+                    <ellipse cx="145" cy="90" rx="30" ry="35" fill="none" stroke="#e8d48b" stroke-width="0.5" opacity="0.3"/>
+                    <!-- Diamond on left ring -->
+                    <path d="M90,50 L95,42 L100,50 L95,55Z" fill="rgba(201,168,76,0.3)" stroke="#c9a84c" stroke-width="1"/>
+                    <path d="M87,50 L95,40 L103,50" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.5"/>
+                    <!-- Sparkles -->
+                    <g opacity="0.5" stroke="#c9a84c" stroke-width="0.8">
+                        <line x1="80" y1="38" x2="80" y2="30"/>
+                        <line x1="76" y1="34" x2="84" y2="34"/>
+                        <line x1="160" y1="42" x2="160" y2="35"/>
+                        <line x1="156" y1="38" x2="164" y2="38"/>
+                        <line x1="120" y1="28" x2="120" y2="22"/>
+                        <line x1="117" y1="25" x2="123" y2="25"/>
+                    </g>
+                    <!-- Small hearts -->
+                    <g transform="translate(112, 60)" opacity="0.4">
+                        <path d="M8,3 Q8,0 5,0 Q2,0 2,3 Q2,6 8,10 Q14,6 14,3 Q14,0 11,0 Q8,0 8,3Z" fill="rgba(201,168,76,0.4)" stroke="#c9a84c" stroke-width="0.6"/>
+                    </g>
+                    <!-- Floral accents around rings -->
+                    <g opacity="0.35" stroke="#c9a84c" fill="none" stroke-width="0.6">
+                        <path d="M50,80 Q45,75 40,80 Q45,85 50,80Z"/>
+                        <path d="M48,85 Q43,80 38,85 Q43,90 48,85Z"/>
+                        <circle cx="44" cy="82" r="1.5" fill="rgba(201,168,76,0.2)"/>
+                        <path d="M190,80 Q195,75 200,80 Q195,85 190,80Z"/>
+                        <path d="M192,85 Q197,80 202,85 Q197,90 192,85Z"/>
+                        <circle cx="196" cy="82" r="1.5" fill="rgba(201,168,76,0.2)"/>
+                        <path d="M55,120 Q50,115 45,120" stroke-width="0.5"/>
+                        <path d="M185,120 Q190,115 195,120" stroke-width="0.5"/>
+                    </g>
+                    <!-- Date text -->
+                    <text x="120" y="160" text-anchor="middle" font-family="Playfair Display, serif" font-size="11" fill="#c9a84c" letter-spacing="3" opacity="0.7">25 . 01 . 2026</text>
+                </svg>
+            </div>
+            <p class="engagement-date">January 25th, 2026</p>
+            <p class="engagement-text">Alhamdulillah, with the blessings of our families and by the grace of Allah, we exchanged rings and began this beautiful chapter of our lives together.</p>
+        </div>
+    </section>
+
     <!-- Event Details Section -->
     <section class="details-section" id="details">
+        <div class="section-flowers">
+            <div class="flower flower-1"></div>
+            <div class="flower flower-3"></div>
+        </div>
         <div class="section-header fade-in">
             <div class="ornament-star">&#10022;</div>
             <h2>Wedding Details</h2>
@@ -127,37 +340,49 @@
         </div>
     </section>
 
-    <!-- Gallery / Our Story Section -->
+    <!-- Our Story Section -->
     <section class="story-section" id="story">
+        <div class="section-flowers">
+            <div class="flower flower-2"></div>
+            <div class="flower flower-4"></div>
+        </div>
         <div class="section-header fade-in">
             <div class="ornament-star">&#10022;</div>
-            <h2>Our Journey</h2>
+            <h2>Our Story</h2>
             <div class="ornament-star">&#10022;</div>
         </div>
         <div class="timeline fade-in">
             <div class="timeline-item left">
-                <div class="timeline-dot"></div>
+                <div class="timeline-dot">
+                    <div class="dot-flower"></div>
+                </div>
                 <div class="timeline-content">
                     <h3>How It Began</h3>
                     <p>By the will of Allah, our paths crossed and our hearts found peace in one another.</p>
                 </div>
             </div>
             <div class="timeline-item right">
-                <div class="timeline-dot"></div>
+                <div class="timeline-dot">
+                    <div class="dot-flower"></div>
+                </div>
                 <div class="timeline-content">
                     <h3>The Families Met</h3>
                     <p>With the blessings of our families, we began this beautiful journey together.</p>
                 </div>
             </div>
             <div class="timeline-item left">
-                <div class="timeline-dot"></div>
+                <div class="timeline-dot">
+                    <div class="dot-flower"></div>
+                </div>
                 <div class="timeline-content">
-                    <h3>The Proposal</h3>
-                    <p>Alhamdulillah, with trust in Allah's plan, the proposal was made and accepted.</p>
+                    <h3>Our Engagement</h3>
+                    <p>On January 25th, 2026, Alhamdulillah, we exchanged rings and sealed our promise.</p>
                 </div>
             </div>
             <div class="timeline-item right">
-                <div class="timeline-dot"></div>
+                <div class="timeline-dot">
+                    <div class="dot-flower"></div>
+                </div>
                 <div class="timeline-content">
                     <h3>Our Nikah</h3>
                     <p>In sha Allah, we will begin our forever on 27th April 2026.</p>
@@ -168,6 +393,10 @@
 
     <!-- RSVP Section -->
     <section class="rsvp-section" id="rsvp">
+        <div class="section-flowers">
+            <div class="flower flower-5"></div>
+            <div class="flower flower-6"></div>
+        </div>
         <div class="rsvp-content fade-in">
             <h2>Join Us In Celebration</h2>
             <p class="rsvp-message">Your presence would be a blessing on our special day. We humbly request the honor of your company.</p>
@@ -182,6 +411,19 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-pattern"></div>
+        <div class="footer-flowers">
+            <svg viewBox="0 0 400 50" xmlns="http://www.w3.org/2000/svg" width="300">
+                <g fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.4">
+                    <path d="M200,45 Q180,25 160,30 Q175,20 188,24 Q180,10 195,15 Q200,2 205,15 Q220,10 212,24 Q225,20 240,30 Q220,25 200,45Z"/>
+                    <path d="M120,30 Q130,25 140,30 Q130,28 120,30Z"/>
+                    <path d="M260,30 Q270,25 280,30 Q270,28 260,30Z"/>
+                    <circle cx="130" cy="28" r="2" fill="rgba(201,168,76,0.15)"/>
+                    <circle cx="270" cy="28" r="2" fill="rgba(201,168,76,0.15)"/>
+                    <path d="M80,32 Q90,28 100,32" stroke-width="0.5"/>
+                    <path d="M300,32 Q310,28 320,32" stroke-width="0.5"/>
+                </g>
+            </svg>
+        </div>
         <div class="footer-content">
             <p class="footer-nickname">#SaSha</p>
             <p class="footer-names">Sadath & Shaiba</p>
