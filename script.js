@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ===== COUNTDOWN TIMER =====
     // Set wedding date: 15th August 2026
-    const weddingDate = new Date('2026-08-15T12:00:00').getTime();
+    const weddingDate = new Date('2026-04-27T12:00:00').getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
