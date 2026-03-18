@@ -17,6 +17,10 @@
     --white: #ffffff;
     --text-light: #d4c9a8;
     --text-muted: #8a7d65;
+    --rose: #c4878a;
+    --rose-deep: #8b4a5e;
+    --rose-blush: #d4a0a0;
+    --rose-soft: rgba(196, 135, 138, 0.08);
 }
 
 html {
@@ -107,6 +111,24 @@ body {
     overflow: hidden;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 10% 20%, rgba(196, 135, 138, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(196, 135, 138, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 5% 80%, rgba(196, 135, 138, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 95% 80%, rgba(196, 135, 138, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 20% 60%, rgba(139, 74, 94, 0.05) 0%, transparent 35%),
+        radial-gradient(ellipse at 80% 60%, rgba(139, 74, 94, 0.05) 0%, transparent 35%);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -114,8 +136,9 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 50% 30%, rgba(196, 135, 138, 0.04) 0%, transparent 40%);
     z-index: 1;
 }
 
@@ -292,6 +315,19 @@ body {
     overflow: hidden;
 }
 
+.quran-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 0% 50%, rgba(196, 135, 138, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 100% 50%, rgba(196, 135, 138, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 .geometric-bg {
     position: absolute;
     top: 0;
@@ -319,6 +355,7 @@ body {
     position: relative;
     text-align: center;
     background: rgba(201, 168, 76, 0.02);
+    box-shadow: 0 0 60px rgba(196, 135, 138, 0.05), 0 0 120px rgba(201, 168, 76, 0.03);
 }
 
 .islamic-frame::before,
@@ -371,8 +408,24 @@ body {
 
 /* ===== DETAILS SECTION ===== */
 .details-section {
+    position: relative;
     padding: 100px 20px;
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-green) 50%, var(--dark) 100%);
+    overflow: hidden;
+}
+
+.details-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 15% 30%, rgba(196, 135, 138, 0.07) 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 70%, rgba(196, 135, 138, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 50% 0%, rgba(139, 74, 94, 0.04) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .section-header {
@@ -414,6 +467,18 @@ body {
     text-align: center;
     transition: all 0.5s ease;
     overflow: hidden;
+    backdrop-filter: blur(2px);
+}
+
+.event-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(196, 135, 138, 0.04) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 .event-card:hover {
@@ -503,6 +568,19 @@ body {
     overflow: hidden;
 }
 
+.countdown-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(196, 135, 138, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(196, 135, 138, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 .countdown-bg-pattern {
     position: absolute;
     top: 0;
@@ -570,8 +648,23 @@ body {
 
 /* ===== STORY / TIMELINE SECTION ===== */
 .story-section {
+    position: relative;
     padding: 100px 20px;
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-green) 50%, var(--dark) 100%);
+    overflow: hidden;
+}
+
+.story-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 10% 20%, rgba(196, 135, 138, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 80%, rgba(196, 135, 138, 0.06) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .timeline {
@@ -632,6 +725,7 @@ body {
     border: 1px solid rgba(201, 168, 76, 0.15);
     padding: 25px;
     transition: all 0.4s ease;
+    box-shadow: 0 0 30px rgba(196, 135, 138, 0.04);
 }
 
 .timeline-content:hover {
@@ -655,9 +749,23 @@ body {
 
 /* ===== RSVP SECTION ===== */
 .rsvp-section {
+    position: relative;
     padding: 100px 20px;
     background: var(--dark);
     text-align: center;
+    overflow: hidden;
+}
+
+.rsvp-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(196, 135, 138, 0.05) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .rsvp-content {
@@ -684,6 +792,7 @@ body {
     border: 1px solid rgba(201, 168, 76, 0.2);
     padding: 40px 30px;
     background: rgba(201, 168, 76, 0.02);
+    box-shadow: 0 0 40px rgba(196, 135, 138, 0.04);
 }
 
 .dua-text {
@@ -715,6 +824,19 @@ body {
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-green) 100%);
     text-align: center;
     overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(196, 135, 138, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(196, 135, 138, 0.05) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .footer-pattern {
@@ -872,20 +994,32 @@ body {
 /* ===== FLORAL CORNERS ===== */
 .floral-corner {
     position: fixed;
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     z-index: 2;
     pointer-events: none;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
 }
 
 .floral-top-left {
-    top: 0;
-    left: 0;
+    top: -10px;
+    left: -10px;
 }
 
 .floral-top-right {
-    top: 0;
-    right: 0;
+    top: -10px;
+    right: -10px;
+}
+
+.floral-bottom-left {
+    bottom: -10px;
+    left: -10px;
+}
+
+.floral-bottom-right {
+    bottom: -10px;
+    right: -10px;
 }
 
 /* ===== FLORAL DIVIDERS ===== */
@@ -915,48 +1049,58 @@ body {
 
 .flower {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     opacity: 0;
-    animation: bloomFloat 8s ease-in-out infinite;
-}
-
-.flower::before,
-.flower::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid rgba(201, 168, 76, 0.3);
-    background: rgba(201, 168, 76, 0.05);
+    animation: bloomFloat 10s ease-in-out infinite;
 }
 
 .flower::before {
-    top: 0;
+    content: '';
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(196, 135, 138, 0.2) 0%, rgba(196, 135, 138, 0.08) 40%, transparent 70%);
+    box-shadow:
+        12px 0 0 -3px rgba(196, 135, 138, 0.12),
+        -12px 0 0 -3px rgba(196, 135, 138, 0.12),
+        0 12px 0 -3px rgba(196, 135, 138, 0.12),
+        0 -12px 0 -3px rgba(196, 135, 138, 0.12),
+        8px 8px 0 -3px rgba(212, 160, 160, 0.1),
+        -8px -8px 0 -3px rgba(212, 160, 160, 0.1),
+        8px -8px 0 -3px rgba(212, 160, 160, 0.1),
+        -8px 8px 0 -3px rgba(212, 160, 160, 0.1);
 }
 
 .flower::after {
-    bottom: 0;
+    content: '';
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(201, 168, 76, 0.35);
+    box-shadow: 0 0 8px rgba(201, 168, 76, 0.2);
 }
 
-.flower-1 { top: 10%; left: 5%; animation-delay: 0s; }
-.flower-2 { top: 15%; right: 8%; animation-delay: 2s; }
-.flower-3 { bottom: 15%; left: 8%; animation-delay: 4s; }
-.flower-4 { bottom: 10%; right: 5%; animation-delay: 1s; }
-.flower-5 { top: 20%; left: 10%; animation-delay: 3s; }
-.flower-6 { bottom: 20%; right: 10%; animation-delay: 5s; }
+.flower-1 { top: 8%; left: 3%; animation-delay: 0s; width: 70px; height: 70px; }
+.flower-2 { top: 12%; right: 4%; animation-delay: 2.5s; width: 55px; height: 55px; }
+.flower-3 { bottom: 12%; left: 5%; animation-delay: 5s; width: 65px; height: 65px; }
+.flower-4 { bottom: 8%; right: 3%; animation-delay: 1.5s; width: 50px; height: 50px; }
+.flower-5 { top: 25%; left: 8%; animation-delay: 3.5s; width: 45px; height: 45px; }
+.flower-6 { bottom: 25%; right: 6%; animation-delay: 6s; width: 55px; height: 55px; }
 
 @keyframes bloomFloat {
-    0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
-    20% { opacity: 0.4; }
-    50% { opacity: 0.6; transform: scale(1) rotate(45deg); }
-    80% { opacity: 0.4; }
+    0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+    15% { opacity: 0.5; }
+    50% { opacity: 0.7; transform: scale(1.1) rotate(30deg); }
+    85% { opacity: 0.5; }
 }
 
 /* ===== COUPLE ILLUSTRATION ===== */
@@ -1114,8 +1258,8 @@ body {
     }
 
     .floral-corner {
-        width: 120px;
-        height: 120px;
+        width: 180px;
+        height: 180px;
     }
 
     .couple-illustration svg {
