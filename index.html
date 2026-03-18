@@ -19,44 +19,189 @@
     <!-- Floating Petals -->
     <canvas id="particles"></canvas>
 
-    <!-- Floral Corner Decorations (fixed) -->
+    <!-- Rose Bouquet Corner Decorations (fixed) -->
     <div class="floral-corner floral-top-left">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.25" fill="none" stroke="#c9a84c" stroke-width="1.2">
-                <path d="M10,190 Q10,100 60,60 Q30,80 10,80"/>
-                <path d="M10,190 Q30,120 80,80 Q50,90 30,100"/>
-                <path d="M10,190 Q50,140 100,110 Q70,110 50,120"/>
-                <circle cx="60" cy="60" r="8" fill="rgba(201,168,76,0.15)" stroke="#c9a84c"/>
-                <circle cx="80" cy="80" r="6" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
-                <circle cx="100" cy="110" r="5" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
-                <path d="M55,55 Q60,45 65,55 Q60,50 55,55Z" fill="rgba(201,168,76,0.2)"/>
-                <path d="M50,60 Q60,50 70,60 Q60,55 50,60Z" fill="rgba(201,168,76,0.15)"/>
-                <path d="M75,75 Q80,65 85,75 Q80,70 75,75Z" fill="rgba(201,168,76,0.15)"/>
-                <path d="M95,105 Q100,95 105,105 Q100,100 95,105Z" fill="rgba(201,168,76,0.12)"/>
-                <path d="M30,140 Q35,130 40,140" stroke-width="0.8"/>
-                <path d="M20,160 Q25,150 30,160" stroke-width="0.8"/>
-                <circle cx="35" cy="135" r="3" fill="rgba(180,140,80,0.15)"/>
-                <circle cx="25" cy="155" r="2.5" fill="rgba(180,140,80,0.12)"/>
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Stems and leaves -->
+            <g stroke="rgba(80,120,60,0.3)" fill="none" stroke-width="1.5">
+                <path d="M0,300 Q20,200 55,140 Q70,110 80,80"/>
+                <path d="M0,300 Q40,220 80,160 Q100,130 120,105"/>
+                <path d="M0,300 Q60,240 110,190 Q140,165 155,140"/>
+                <path d="M0,260 Q30,200 60,160"/>
+                <path d="M0,220 Q25,180 50,150"/>
+            </g>
+            <!-- Leaves -->
+            <g fill="rgba(80,120,60,0.12)" stroke="rgba(80,120,60,0.25)" stroke-width="0.8">
+                <path d="M30,220 Q20,200 35,190 Q45,200 30,220Z"/>
+                <path d="M50,190 Q40,170 55,160 Q65,170 50,190Z"/>
+                <path d="M70,160 Q60,140 75,130 Q85,140 70,160Z"/>
+                <path d="M20,250 Q10,235 25,225 Q35,235 20,250Z"/>
+                <path d="M95,135 Q85,120 98,110 Q108,120 95,135Z"/>
+                <path d="M40,175 Q30,160 42,152 Q52,160 40,175Z"/>
+            </g>
+            <!-- Rose 1 (large) -->
+            <g transform="translate(75,75)">
+                <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(0)" fill="rgba(196,135,138,0.18)" stroke="rgba(196,135,138,0.35)" stroke-width="0.8"/>
+                <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(72)" fill="rgba(196,135,138,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.8"/>
+                <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(144)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.28)" stroke-width="0.8"/>
+                <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(216)" fill="rgba(196,135,138,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.8"/>
+                <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(288)" fill="rgba(196,135,138,0.18)" stroke="rgba(196,135,138,0.32)" stroke-width="0.8"/>
+                <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(36)" fill="rgba(196,135,138,0.22)" stroke="rgba(196,135,138,0.35)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(108)" fill="rgba(196,135,138,0.2)" stroke="rgba(196,135,138,0.33)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(180)" fill="rgba(196,135,138,0.22)" stroke="rgba(196,135,138,0.35)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(252)" fill="rgba(196,135,138,0.2)" stroke="rgba(196,135,138,0.33)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(324)" fill="rgba(196,135,138,0.22)" stroke="rgba(196,135,138,0.35)" stroke-width="0.6"/>
+                <circle cx="0" cy="0" r="5" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
+                <path d="M-2,-2 Q0,-4 2,-2 Q0,0 -2,-2Z" fill="rgba(201,168,76,0.4)"/>
+            </g>
+            <!-- Rose 2 (medium) -->
+            <g transform="translate(120,105)">
+                <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(15)" fill="rgba(212,160,160,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.7"/>
+                <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(87)" fill="rgba(212,160,160,0.14)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(159)" fill="rgba(212,160,160,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.7"/>
+                <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(231)" fill="rgba(212,160,160,0.14)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(303)" fill="rgba(212,160,160,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.7"/>
+                <ellipse cx="0" cy="-5" rx="7" ry="9" transform="rotate(50)" fill="rgba(212,160,160,0.2)" stroke="rgba(196,135,138,0.35)" stroke-width="0.5"/>
+                <ellipse cx="0" cy="-5" rx="7" ry="9" transform="rotate(122)" fill="rgba(212,160,160,0.18)" stroke="rgba(196,135,138,0.33)" stroke-width="0.5"/>
+                <ellipse cx="0" cy="-5" rx="7" ry="9" transform="rotate(194)" fill="rgba(212,160,160,0.2)" stroke="rgba(196,135,138,0.35)" stroke-width="0.5"/>
+                <ellipse cx="0" cy="-5" rx="7" ry="9" transform="rotate(266)" fill="rgba(212,160,160,0.18)" stroke="rgba(196,135,138,0.33)" stroke-width="0.5"/>
+                <circle cx="0" cy="0" r="4" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.35)" stroke-width="0.4"/>
+            </g>
+            <!-- Rose 3 (small) -->
+            <g transform="translate(155,140)">
+                <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(10)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(82)" fill="rgba(196,135,138,0.12)" stroke="rgba(196,135,138,0.22)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(154)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(226)" fill="rgba(196,135,138,0.12)" stroke="rgba(196,135,138,0.22)" stroke-width="0.6"/>
+                <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(298)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                <circle cx="0" cy="0" r="3" fill="rgba(201,168,76,0.2)"/>
+            </g>
+            <!-- Rose buds -->
+            <g fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.25)" stroke-width="0.5">
+                <ellipse cx="55" cy="140" rx="5" ry="7" transform="rotate(-20,55,140)"/>
+                <ellipse cx="40" cy="160" rx="4" ry="6" transform="rotate(-30,40,160)"/>
+                <ellipse cx="25" cy="185" rx="4" ry="5" transform="rotate(-15,25,185)"/>
+            </g>
+            <!-- Gold accent dots -->
+            <g fill="rgba(201,168,76,0.2)">
+                <circle cx="90" cy="60" r="2"/>
+                <circle cx="130" cy="90" r="1.5"/>
+                <circle cx="60" cy="100" r="1.5"/>
+                <circle cx="100" cy="120" r="1"/>
+                <circle cx="145" cy="125" r="1"/>
             </g>
         </svg>
     </div>
     <div class="floral-corner floral-top-right">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.25" fill="none" stroke="#c9a84c" stroke-width="1.2" transform="scale(-1,1) translate(-200,0)">
-                <path d="M10,190 Q10,100 60,60 Q30,80 10,80"/>
-                <path d="M10,190 Q30,120 80,80 Q50,90 30,100"/>
-                <path d="M10,190 Q50,140 100,110 Q70,110 50,120"/>
-                <circle cx="60" cy="60" r="8" fill="rgba(201,168,76,0.15)" stroke="#c9a84c"/>
-                <circle cx="80" cy="80" r="6" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
-                <circle cx="100" cy="110" r="5" fill="rgba(201,168,76,0.1)" stroke="#c9a84c"/>
-                <path d="M55,55 Q60,45 65,55 Q60,50 55,55Z" fill="rgba(201,168,76,0.2)"/>
-                <path d="M50,60 Q60,50 70,60 Q60,55 50,60Z" fill="rgba(201,168,76,0.15)"/>
-                <path d="M75,75 Q80,65 85,75 Q80,70 75,75Z" fill="rgba(201,168,76,0.15)"/>
-                <path d="M95,105 Q100,95 105,105 Q100,100 95,105Z" fill="rgba(201,168,76,0.12)"/>
-                <path d="M30,140 Q35,130 40,140" stroke-width="0.8"/>
-                <path d="M20,160 Q25,150 30,160" stroke-width="0.8"/>
-                <circle cx="35" cy="135" r="3" fill="rgba(180,140,80,0.15)"/>
-                <circle cx="25" cy="155" r="2.5" fill="rgba(180,140,80,0.12)"/>
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <g transform="scale(-1,1) translate(-300,0)">
+                <!-- Stems and leaves -->
+                <g stroke="rgba(80,120,60,0.3)" fill="none" stroke-width="1.5">
+                    <path d="M0,300 Q20,200 55,140 Q70,110 80,80"/>
+                    <path d="M0,300 Q40,220 80,160 Q100,130 120,105"/>
+                    <path d="M0,300 Q60,240 110,190 Q140,165 155,140"/>
+                    <path d="M0,260 Q30,200 60,160"/>
+                    <path d="M0,220 Q25,180 50,150"/>
+                </g>
+                <g fill="rgba(80,120,60,0.12)" stroke="rgba(80,120,60,0.25)" stroke-width="0.8">
+                    <path d="M30,220 Q20,200 35,190 Q45,200 30,220Z"/>
+                    <path d="M50,190 Q40,170 55,160 Q65,170 50,190Z"/>
+                    <path d="M70,160 Q60,140 75,130 Q85,140 70,160Z"/>
+                    <path d="M20,250 Q10,235 25,225 Q35,235 20,250Z"/>
+                    <path d="M95,135 Q85,120 98,110 Q108,120 95,135Z"/>
+                </g>
+                <g transform="translate(75,75)">
+                    <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(0)" fill="rgba(196,135,138,0.18)" stroke="rgba(196,135,138,0.35)" stroke-width="0.8"/>
+                    <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(72)" fill="rgba(196,135,138,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.8"/>
+                    <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(144)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.28)" stroke-width="0.8"/>
+                    <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(216)" fill="rgba(196,135,138,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.8"/>
+                    <ellipse cx="0" cy="-10" rx="14" ry="18" transform="rotate(288)" fill="rgba(196,135,138,0.18)" stroke="rgba(196,135,138,0.32)" stroke-width="0.8"/>
+                    <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(36)" fill="rgba(196,135,138,0.22)" stroke="rgba(196,135,138,0.35)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(108)" fill="rgba(196,135,138,0.2)" stroke="rgba(196,135,138,0.33)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(180)" fill="rgba(196,135,138,0.22)" stroke="rgba(196,135,138,0.35)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-6" rx="9" ry="12" transform="rotate(252)" fill="rgba(196,135,138,0.2)" stroke="rgba(196,135,138,0.33)" stroke-width="0.6"/>
+                    <circle cx="0" cy="0" r="5" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
+                </g>
+                <g transform="translate(120,105)">
+                    <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(15)" fill="rgba(212,160,160,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(87)" fill="rgba(212,160,160,0.14)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(159)" fill="rgba(212,160,160,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(231)" fill="rgba(212,160,160,0.14)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-8" rx="11" ry="14" transform="rotate(303)" fill="rgba(212,160,160,0.16)" stroke="rgba(196,135,138,0.3)" stroke-width="0.7"/>
+                    <circle cx="0" cy="0" r="4" fill="rgba(201,168,76,0.2)"/>
+                </g>
+                <g transform="translate(155,140)">
+                    <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(10)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(82)" fill="rgba(196,135,138,0.12)" stroke="rgba(196,135,138,0.22)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(154)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(226)" fill="rgba(196,135,138,0.12)" stroke="rgba(196,135,138,0.22)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-6" rx="8" ry="10" transform="rotate(298)" fill="rgba(196,135,138,0.14)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                    <circle cx="0" cy="0" r="3" fill="rgba(201,168,76,0.2)"/>
+                </g>
+                <g fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.25)" stroke-width="0.5">
+                    <ellipse cx="55" cy="140" rx="5" ry="7" transform="rotate(-20,55,140)"/>
+                    <ellipse cx="40" cy="160" rx="4" ry="6" transform="rotate(-30,40,160)"/>
+                </g>
+                <g fill="rgba(201,168,76,0.2)">
+                    <circle cx="90" cy="60" r="2"/>
+                    <circle cx="130" cy="90" r="1.5"/>
+                    <circle cx="60" cy="100" r="1.5"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <!-- Bottom corners -->
+    <div class="floral-corner floral-bottom-left">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <g transform="scale(1,-1) translate(0,-300)">
+                <g stroke="rgba(80,120,60,0.25)" fill="none" stroke-width="1.5">
+                    <path d="M0,300 Q20,200 55,140 Q70,110 80,80"/>
+                    <path d="M0,300 Q40,220 80,160 Q100,130 120,105"/>
+                    <path d="M0,300 Q60,240 110,190 Q140,165 155,140"/>
+                </g>
+                <g fill="rgba(80,120,60,0.1)" stroke="rgba(80,120,60,0.2)" stroke-width="0.8">
+                    <path d="M30,220 Q20,200 35,190 Q45,200 30,220Z"/>
+                    <path d="M50,190 Q40,170 55,160 Q65,170 50,190Z"/>
+                    <path d="M70,160 Q60,140 75,130 Q85,140 70,160Z"/>
+                </g>
+                <g transform="translate(80,80)">
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(0)" fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(72)" fill="rgba(196,135,138,0.13)" stroke="rgba(196,135,138,0.25)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(144)" fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(216)" fill="rgba(196,135,138,0.13)" stroke="rgba(196,135,138,0.25)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(288)" fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <circle cx="0" cy="0" r="4" fill="rgba(201,168,76,0.2)"/>
+                </g>
+                <g transform="translate(125,110)">
+                    <ellipse cx="0" cy="-7" rx="9" ry="11" transform="rotate(20)" fill="rgba(212,160,160,0.13)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-7" rx="9" ry="11" transform="rotate(92)" fill="rgba(212,160,160,0.11)" stroke="rgba(196,135,138,0.22)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-7" rx="9" ry="11" transform="rotate(164)" fill="rgba(212,160,160,0.13)" stroke="rgba(196,135,138,0.25)" stroke-width="0.6"/>
+                    <ellipse cx="0" cy="-7" rx="9" ry="11" transform="rotate(236)" fill="rgba(212,160,160,0.11)" stroke="rgba(196,135,138,0.22)" stroke-width="0.6"/>
+                    <circle cx="0" cy="0" r="3" fill="rgba(201,168,76,0.18)"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="floral-corner floral-bottom-right">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <g transform="scale(-1,-1) translate(-300,-300)">
+                <g stroke="rgba(80,120,60,0.25)" fill="none" stroke-width="1.5">
+                    <path d="M0,300 Q20,200 55,140 Q70,110 80,80"/>
+                    <path d="M0,300 Q40,220 80,160 Q100,130 120,105"/>
+                    <path d="M0,300 Q60,240 110,190 Q140,165 155,140"/>
+                </g>
+                <g fill="rgba(80,120,60,0.1)" stroke="rgba(80,120,60,0.2)" stroke-width="0.8">
+                    <path d="M30,220 Q20,200 35,190 Q45,200 30,220Z"/>
+                    <path d="M50,190 Q40,170 55,160 Q65,170 50,190Z"/>
+                </g>
+                <g transform="translate(80,80)">
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(0)" fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(72)" fill="rgba(196,135,138,0.13)" stroke="rgba(196,135,138,0.25)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(144)" fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(216)" fill="rgba(196,135,138,0.13)" stroke="rgba(196,135,138,0.25)" stroke-width="0.7"/>
+                    <ellipse cx="0" cy="-9" rx="12" ry="16" transform="rotate(288)" fill="rgba(196,135,138,0.15)" stroke="rgba(196,135,138,0.28)" stroke-width="0.7"/>
+                    <circle cx="0" cy="0" r="4" fill="rgba(201,168,76,0.2)"/>
+                </g>
             </g>
         </svg>
     </div>
