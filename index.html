@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="islamic-spinner"></div>
+            <p class="preloader-text">Bismillah</p>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <canvas id="particles"></canvas>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="islamic-border-top"></div>
+        <div class="hero-content">
+            <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+            <p class="bismillah-translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
+            <div class="divider-ornament">
+                <span class="ornament-line"></span>
+                <span class="ornament-diamond">&#9670;</span>
+                <span class="ornament-line"></span>
+            </div>
+            <p class="invite-line">Together with the blessings of Allah, we invite you to celebrate the union of</p>
+            <h1 class="groom-name reveal-text">Ahmed</h1>
+            <p class="ampersand">&</p>
+            <h1 class="bride-name reveal-text">Fatima</h1>
+            <div class="divider-ornament">
+                <span class="ornament-line"></span>
+                <span class="ornament-diamond">&#9670;</span>
+                <span class="ornament-line"></span>
+            </div>
+            <p class="scroll-hint">Scroll down to explore</p>
+            <div class="scroll-arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="islamic-border-bottom"></div>
+    </section>
+
+    <!-- Quran Verse Section -->
+    <section class="quran-section" id="quran">
+        <div class="geometric-bg"></div>
+        <div class="quran-content fade-in">
+            <div class="islamic-frame">
+                <p class="quran-arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+                <p class="quran-translation">"And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."</p>
+                <p class="quran-reference">— Surah Ar-Rum (30:21)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="details-section" id="details">
+        <div class="section-header fade-in">
+            <div class="ornament-star">&#10022;</div>
+            <h2>Wedding Details</h2>
+            <div class="ornament-star">&#10022;</div>
+        </div>
+
+        <div class="events-grid">
+            <!-- Nikah -->
+            <div class="event-card fade-in">
+                <div class="card-glow"></div>
+                <div class="card-icon">&#9784;</div>
+                <h3>Nikah Ceremony</h3>
+                <div class="card-divider"></div>
+                <p class="event-date">Friday, 15th August 2026</p>
+                <p class="event-time">After Dhuhr Prayer</p>
+                <p class="event-venue">Grand Masjid Hall</p>
+                <p class="event-address">123 Al Noor Street, City Name</p>
+            </div>
+
+            <!-- Walima -->
+            <div class="event-card fade-in">
+                <div class="card-glow"></div>
+                <div class="card-icon">&#127881;</div>
+                <h3>Walima Reception</h3>
+                <div class="card-divider"></div>
+                <p class="event-date">Saturday, 16th August 2026</p>
+                <p class="event-time">7:00 PM Onwards</p>
+                <p class="event-venue">The Royal Banquet</p>
+                <p class="event-address">456 Crescent Avenue, City Name</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section" id="countdown">
+        <div class="countdown-bg-pattern"></div>
+        <div class="countdown-content fade-in">
+            <h2>Counting Down To Our Special Day</h2>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">000</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Our Story Section -->
+    <section class="story-section" id="story">
+        <div class="section-header fade-in">
+            <div class="ornament-star">&#10022;</div>
+            <h2>Our Journey</h2>
+            <div class="ornament-star">&#10022;</div>
+        </div>
+        <div class="timeline fade-in">
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>How It Began</h3>
+                    <p>By the will of Allah, our paths crossed and our hearts found peace in one another.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>The Families Met</h3>
+                    <p>With the blessings of our families, we began this beautiful journey together.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>The Proposal</h3>
+                    <p>Alhamdulillah, with trust in Allah's plan, the proposal was made and accepted.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Our Nikah</h3>
+                    <p>In sha Allah, we will begin our forever on 15th August 2026.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="rsvp-content fade-in">
+            <h2>Join Us In Celebration</h2>
+            <p class="rsvp-message">Your presence would be a blessing on our special day. We humbly request the honor of your company.</p>
+            <div class="dua-request">
+                <p class="dua-text">We kindly ask for your duas for our blessed union</p>
+                <p class="dua-arabic">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+                <p class="dua-translation">"May Allah bless you, and shower His blessings upon you, and join you together in goodness."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-content">
+            <p class="footer-names">Ahmed & Fatima</p>
+            <p class="footer-date">15 . 08 . 2026</p>
+            <p class="footer-dua">May Allah bless this union with love, mercy, and barakah</p>
+        </div>
+    </footer>
+
+    <!-- Background Music Toggle -->
+    <button id="musicToggle" class="music-toggle" title="Toggle Music">
+        <span class="music-icon">&#9835;</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,957 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #c9a84c;
+    --gold-light: #e8d48b;
+    --gold-dark: #8b6914;
+    --dark: #0a0a0a;
+    --dark-green: #0d1f1a;
+    --emerald: #1a3a2a;
+    --emerald-light: #2d5a3f;
+    --cream: #faf5e8;
+    --white: #ffffff;
+    --text-light: #d4c9a8;
+    --text-muted: #8a7d65;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--dark);
+    color: var(--cream);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ===== PRELOADER ===== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-inner {
+    text-align: center;
+}
+
+.islamic-spinner {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border: 3px solid transparent;
+    border-top: 3px solid var(--gold);
+    border-right: 3px solid var(--gold-light);
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+    position: relative;
+}
+
+.islamic-spinner::before {
+    content: '☪';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: var(--gold);
+}
+
+.preloader-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.4em;
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+/* ===== PARTICLES CANVAS ===== */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(ellipse at center, var(--emerald) 0%, var(--dark-green) 40%, var(--dark) 100%);
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.islamic-border-top,
+.islamic-border-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 2;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        rgba(201, 168, 76, 0.15) 20px,
+        rgba(201, 168, 76, 0.15) 21px
+    );
+}
+
+.islamic-border-top {
+    top: 0;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.islamic-border-top::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.islamic-border-bottom {
+    bottom: 0;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 3;
+    padding: 40px 20px;
+}
+
+.bismillah {
+    font-family: 'Amiri', serif;
+    font-size: 2.2em;
+    color: var(--gold);
+    margin-bottom: 8px;
+    animation: fadeInDown 1.5s ease-out;
+    direction: rtl;
+}
+
+.bismillah-translation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1em;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 30px;
+    animation: fadeInDown 1.5s ease-out 0.2s both;
+}
+
+.divider-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    animation: fadeIn 2s ease-out 0.4s both;
+}
+
+.ornament-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.ornament-diamond {
+    color: var(--gold);
+    font-size: 0.8em;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.invite-line {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-out 0.6s both;
+}
+
+.groom-name,
+.bride-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5em;
+    color: var(--gold);
+    text-shadow: 0 0 40px rgba(201, 168, 76, 0.3);
+    line-height: 1.1;
+}
+
+.groom-name {
+    animation: revealRight 1.2s ease-out 0.8s both;
+}
+
+.bride-name {
+    animation: revealLeft 1.2s ease-out 1.2s both;
+}
+
+.ampersand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: var(--gold-light);
+    margin: 10px 0;
+    animation: fadeIn 1s ease-out 1s both;
+}
+
+.scroll-hint {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    animation: fadeIn 2s ease-out 1.8s both;
+}
+
+.scroll-arrow {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    animation: fadeIn 2s ease-out 2s both;
+}
+
+.scroll-arrow span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    transform: rotate(45deg);
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow span:nth-child(2) {
+    animation-delay: 0.15s;
+    opacity: 0.7;
+}
+
+.scroll-arrow span:nth-child(3) {
+    animation-delay: 0.3s;
+    opacity: 0.4;
+}
+
+/* ===== QURAN SECTION ===== */
+.quran-section {
+    position: relative;
+    padding: 100px 20px;
+    background: var(--dark);
+    overflow: hidden;
+}
+
+.geometric-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    background-image: 
+        repeating-conic-gradient(
+            var(--gold) 0% 25%, transparent 0% 50%
+        );
+    background-size: 60px 60px;
+}
+
+.quran-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.islamic-frame {
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    padding: 50px 40px;
+    position: relative;
+    text-align: center;
+    background: rgba(201, 168, 76, 0.02);
+}
+
+.islamic-frame::before,
+.islamic-frame::after {
+    content: '✦';
+    position: absolute;
+    color: var(--gold);
+    font-size: 1.5em;
+}
+
+.islamic-frame::before {
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark);
+    padding: 0 15px;
+}
+
+.islamic-frame::after {
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark);
+    padding: 0 15px;
+}
+
+.quran-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 1.8em;
+    color: var(--gold);
+    line-height: 2;
+    margin-bottom: 25px;
+    direction: rtl;
+}
+
+.quran-translation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.quran-reference {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+/* ===== DETAILS SECTION ===== */
+.details-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-green) 50%, var(--dark) 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.ornament-star {
+    color: var(--gold);
+    font-size: 1.2em;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-card {
+    position: relative;
+    background: rgba(201, 168, 76, 0.03);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 50px 35px;
+    text-align: center;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    border-color: rgba(201, 168, 76, 0.5);
+    transform: translateY(-5px);
+}
+
+.event-card:hover .card-glow {
+    opacity: 1;
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-icon {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.event-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    color: var(--gold);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.card-divider {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 15px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.event-date {
+    font-size: 1.2em;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.event-time {
+    font-size: 1.05em;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.event-venue {
+    font-size: 1.15em;
+    color: var(--cream);
+    font-weight: 600;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.event-address {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== COUNTDOWN SECTION ===== */
+.countdown-section {
+    position: relative;
+    padding: 100px 20px;
+    background: var(--dark);
+    overflow: hidden;
+}
+
+.countdown-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(201, 168, 76, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.countdown-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.countdown-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.countdown-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4em;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(201, 168, 76, 0.3);
+}
+
+.countdown-label {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.countdown-separator {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    color: var(--gold);
+    opacity: 0.5;
+    padding-bottom: 25px;
+}
+
+/* ===== STORY / TIMELINE SECTION ===== */
+.story-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-green) 50%, var(--dark) 100%);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--gold), var(--gold), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    margin-bottom: 30px;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 30px;
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+}
+
+.timeline-item.left .timeline-dot {
+    right: -7px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -7px;
+}
+
+.timeline-content {
+    background: rgba(201, 168, 76, 0.03);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    padding: 25px;
+    transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+    border-color: rgba(201, 168, 76, 0.4);
+    background: rgba(201, 168, 76, 0.06);
+}
+
+.timeline-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    font-size: 1em;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ===== RSVP SECTION ===== */
+.rsvp-section {
+    padding: 100px 20px;
+    background: var(--dark);
+    text-align: center;
+}
+
+.rsvp-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.rsvp-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--gold);
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+}
+
+.rsvp-message {
+    font-size: 1.15em;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.dua-request {
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 40px 30px;
+    background: rgba(201, 168, 76, 0.02);
+}
+
+.dua-text {
+    font-size: 1.1em;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.dua-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 1.6em;
+    color: var(--gold);
+    direction: rtl;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.dua-translation {
+    font-size: 1em;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    position: relative;
+    padding: 80px 20px 40px;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-green) 100%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.footer-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.footer-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    color: var(--gold-light);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+.footer-dua {
+    font-size: 1em;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* ===== MUSIC TOGGLE ===== */
+.music-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(201, 168, 76, 0.15);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-toggle:hover {
+    background: rgba(201, 168, 76, 0.25);
+    border-color: var(--gold);
+}
+
+.music-toggle.playing .music-icon {
+    animation: musicPulse 0.6s ease-in-out infinite alternate;
+}
+
+.music-icon {
+    font-size: 1.5em;
+    color: var(--gold);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealRight {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes revealLeft {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.3; }
+    50% { transform: rotate(45deg) translateY(8px); opacity: 1; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes musicPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .bismillah {
+        font-size: 1.5em;
+    }
+
+    .groom-name,
+    .bride-name {
+        font-size: 3em;
+    }
+
+    .ampersand {
+        font-size: 2em;
+    }
+
+    .invite-line {
+        font-size: 0.95em;
+    }
+
+    .section-header h2 {
+        font-size: 1.8em;
+    }
+
+    .countdown-number {
+        font-size: 2.5em;
+    }
+
+    .countdown-separator {
+        font-size: 2em;
+    }
+
+    .countdown-item {
+        min-width: 70px;
+    }
+
+    .quran-arabic {
+        font-size: 1.3em;
+    }
+
+    .islamic-frame {
+        padding: 30px 20px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 13px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-names {
+        font-size: 2em;
+    }
+
+    .rsvp-content h2 {
+        font-size: 1.8em;
+    }
+
+    .dua-arabic {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .groom-name,
+    .bride-name {
+        font-size: 2.2em;
+    }
+
+    .bismillah {
+        font-size: 1.2em;
+    }
+
+    .countdown-timer {
+        gap: 5px;
+    }
+
+    .countdown-number {
+        font-size: 2em;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
