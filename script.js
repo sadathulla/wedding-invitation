@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000);
     });
 
-    // ===== GOLDEN PARTICLES =====
+    // ===== FLOATING FLOWER PETALS =====
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -19,42 +19,69 @@ document.addEventListener('DOMContentLoaded', function () {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    class Particle {
+    class Petal {
         constructor() {
             this.reset();
         }
         reset() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2 + 0.5;
-            this.speedX = (Math.random() - 0.5) * 0.3;
-            this.speedY = (Math.random() - 0.5) * 0.3;
-            this.opacity = Math.random() * 0.5 + 0.1;
+            this.size = Math.random() * 5 + 3;
+            this.speedX = (Math.random() - 0.5) * 0.4;
+            this.speedY = Math.random() * 0.3 + 0.1;
+            this.opacity = Math.random() * 0.35 + 0.05;
             this.fadeDirection = Math.random() > 0.5 ? 1 : -1;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.type = Math.random() > 0.4 ? 'petal' : 'dot';
         }
         update() {
-            this.x += this.speedX;
+            this.x += this.speedX + Math.sin(this.rotation) * 0.2;
             this.y += this.speedY;
-            this.opacity += this.fadeDirection * 0.003;
+            this.rotation += this.rotationSpeed;
+            this.opacity += this.fadeDirection * 0.002;
 
-            if (this.opacity <= 0.05 || this.opacity >= 0.6) {
+            if (this.opacity <= 0.03 || this.opacity >= 0.4) {
                 this.fadeDirection *= -1;
             }
 
-            if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                this.reset();
+            if (this.x < -20 || this.x > canvas.width + 20 || this.y > canvas.height + 20) {
+                this.x = Math.random() * canvas.width;
+                this.y = -10;
+                this.opacity = 0.05;
             }
         }
         draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(201, 168, 76, ' + this.opacity + ')';
-            ctx.fill();
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            ctx.globalAlpha = this.opacity;
+
+            if (this.type === 'petal') {
+                // Draw a flower petal shape
+                ctx.beginPath();
+                ctx.moveTo(0, -this.size);
+                ctx.bezierCurveTo(this.size * 0.8, -this.size * 0.8, this.size * 0.8, this.size * 0.3, 0, this.size);
+                ctx.bezierCurveTo(-this.size * 0.8, this.size * 0.3, -this.size * 0.8, -this.size * 0.8, 0, -this.size);
+                ctx.fillStyle = 'rgba(201, 168, 76, 0.6)';
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(201, 168, 76, 0.3)';
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+            } else {
+                // Small sparkle dot
+                ctx.beginPath();
+                ctx.arc(0, 0, this.size * 0.3, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(232, 212, 139, 0.8)';
+                ctx.fill();
+            }
+
+            ctx.restore();
         }
     }
 
-    for (let i = 0; i < 80; i++) {
-        particles.push(new Particle());
+    for (let i = 0; i < 60; i++) {
+        particles.push(new Petal());
     }
 
     function animateParticles() {
