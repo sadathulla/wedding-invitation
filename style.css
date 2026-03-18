@@ -869,6 +869,171 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== FLORAL CORNERS ===== */
+.floral-corner {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.floral-top-left {
+    top: 0;
+    left: 0;
+}
+
+.floral-top-right {
+    top: 0;
+    right: 0;
+}
+
+/* ===== FLORAL DIVIDERS ===== */
+.floral-divider-hero {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.floral-divider {
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* ===== SECTION FLOWERS ===== */
+.section-flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: bloomFloat 8s ease-in-out infinite;
+}
+
+.flower::before,
+.flower::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    background: rgba(201, 168, 76, 0.05);
+}
+
+.flower::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flower::after {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flower-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.flower-2 { top: 15%; right: 8%; animation-delay: 2s; }
+.flower-3 { bottom: 15%; left: 8%; animation-delay: 4s; }
+.flower-4 { bottom: 10%; right: 5%; animation-delay: 1s; }
+.flower-5 { top: 20%; left: 10%; animation-delay: 3s; }
+.flower-6 { bottom: 20%; right: 10%; animation-delay: 5s; }
+
+@keyframes bloomFloat {
+    0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+    20% { opacity: 0.4; }
+    50% { opacity: 0.6; transform: scale(1) rotate(45deg); }
+    80% { opacity: 0.4; }
+}
+
+/* ===== COUPLE ILLUSTRATION ===== */
+.couple-illustration {
+    margin: 20px auto 10px;
+    text-align: center;
+    animation: fadeIn 2s ease-out 0.5s both;
+}
+
+/* ===== ENGAGEMENT SECTION ===== */
+.engagement-section {
+    position: relative;
+    padding: 100px 20px;
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-green) 50%, var(--dark) 100%);
+    overflow: hidden;
+    text-align: center;
+}
+
+.engagement-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ring-illustration {
+    margin: 0 auto 30px;
+    text-align: center;
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.engagement-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.engagement-text {
+    font-size: 1.1em;
+    color: var(--text-light);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ===== TIMELINE DOT FLOWERS ===== */
+.timeline-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 30px;
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot-flower {
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, var(--gold-light) 30%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ===== FOOTER FLOWERS ===== */
+.footer-flowers {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     .bismillah {
         font-size: 1.5em;
@@ -946,6 +1111,23 @@ body {
 
     .dua-arabic {
         font-size: 1.2em;
+    }
+
+    .floral-corner {
+        width: 120px;
+        height: 120px;
+    }
+
+    .couple-illustration svg {
+        width: 180px;
+    }
+
+    .ring-illustration svg {
+        width: 180px;
+    }
+
+    .engagement-date {
+        font-size: 1.3em;
     }
 }
 
