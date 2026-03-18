@@ -7,10 +7,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000);
     });
 
-    // ===== FLOATING FLOWER PETALS =====
+    // ===== FLOATING ROSE PETALS =====
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
+
+    var petalColors = [
+        { fill: 'rgba(196, 135, 138, 0.5)', stroke: 'rgba(196, 135, 138, 0.25)' },
+        { fill: 'rgba(212, 160, 160, 0.45)', stroke: 'rgba(212, 160, 160, 0.2)' },
+        { fill: 'rgba(180, 110, 115, 0.4)', stroke: 'rgba(180, 110, 115, 0.2)' },
+        { fill: 'rgba(201, 168, 76, 0.45)', stroke: 'rgba(201, 168, 76, 0.2)' },
+        { fill: 'rgba(232, 212, 139, 0.35)', stroke: 'rgba(232, 212, 139, 0.15)' },
+        { fill: 'rgba(220, 180, 180, 0.4)', stroke: 'rgba(220, 180, 180, 0.2)' }
+    ];
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -26,29 +35,41 @@ document.addEventListener('DOMContentLoaded', function () {
         reset() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 5 + 3;
-            this.speedX = (Math.random() - 0.5) * 0.4;
-            this.speedY = Math.random() * 0.3 + 0.1;
-            this.opacity = Math.random() * 0.35 + 0.05;
+            this.size = Math.random() * 8 + 4;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.speedY = Math.random() * 0.4 + 0.08;
+            this.opacity = Math.random() * 0.45 + 0.08;
             this.fadeDirection = Math.random() > 0.5 ? 1 : -1;
             this.rotation = Math.random() * Math.PI * 2;
-            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
-            this.type = Math.random() > 0.4 ? 'petal' : 'dot';
+            this.rotationSpeed = (Math.random() - 0.5) * 0.015;
+            this.wobblePhase = Math.random() * Math.PI * 2;
+            this.wobbleSpeed = Math.random() * 0.02 + 0.005;
+            var r = Math.random();
+            if (r < 0.5) {
+                this.type = 'rose';
+            } else if (r < 0.8) {
+                this.type = 'petal';
+            } else {
+                this.type = 'sparkle';
+            }
+            this.color = petalColors[Math.floor(Math.random() * petalColors.length)];
         }
         update() {
-            this.x += this.speedX + Math.sin(this.rotation) * 0.2;
+            this.wobblePhase += this.wobbleSpeed;
+            this.x += this.speedX + Math.sin(this.wobblePhase) * 0.4;
             this.y += this.speedY;
             this.rotation += this.rotationSpeed;
-            this.opacity += this.fadeDirection * 0.002;
+            this.opacity += this.fadeDirection * 0.0015;
 
-            if (this.opacity <= 0.03 || this.opacity >= 0.4) {
+            if (this.opacity <= 0.05 || this.opacity >= 0.5) {
                 this.fadeDirection *= -1;
             }
 
-            if (this.x < -20 || this.x > canvas.width + 20 || this.y > canvas.height + 20) {
+            if (this.x < -30 || this.x > canvas.width + 30 || this.y > canvas.height + 30) {
                 this.x = Math.random() * canvas.width;
-                this.y = -10;
-                this.opacity = 0.05;
+                this.y = -15;
+                this.opacity = 0.08;
+                this.color = petalColors[Math.floor(Math.random() * petalColors.length)];
             }
         }
         draw() {
@@ -57,30 +78,49 @@ document.addEventListener('DOMContentLoaded', function () {
             ctx.rotate(this.rotation);
             ctx.globalAlpha = this.opacity;
 
-            if (this.type === 'petal') {
-                // Draw a flower petal shape
+            if (this.type === 'rose') {
+                // Rose petal - rounded teardrop
                 ctx.beginPath();
                 ctx.moveTo(0, -this.size);
-                ctx.bezierCurveTo(this.size * 0.8, -this.size * 0.8, this.size * 0.8, this.size * 0.3, 0, this.size);
-                ctx.bezierCurveTo(-this.size * 0.8, this.size * 0.3, -this.size * 0.8, -this.size * 0.8, 0, -this.size);
-                ctx.fillStyle = 'rgba(201, 168, 76, 0.6)';
+                ctx.bezierCurveTo(this.size * 0.9, -this.size * 0.6, this.size * 0.7, this.size * 0.5, 0, this.size * 0.8);
+                ctx.bezierCurveTo(-this.size * 0.7, this.size * 0.5, -this.size * 0.9, -this.size * 0.6, 0, -this.size);
+                ctx.fillStyle = this.color.fill;
                 ctx.fill();
-                ctx.strokeStyle = 'rgba(201, 168, 76, 0.3)';
-                ctx.lineWidth = 0.5;
+                ctx.strokeStyle = this.color.stroke;
+                ctx.lineWidth = 0.6;
+                ctx.stroke();
+                // Petal vein
+                ctx.beginPath();
+                ctx.moveTo(0, -this.size * 0.7);
+                ctx.quadraticCurveTo(this.size * 0.1, 0, 0, this.size * 0.5);
+                ctx.strokeStyle = this.color.stroke;
+                ctx.lineWidth = 0.3;
+                ctx.stroke();
+            } else if (this.type === 'petal') {
+                // Wider oval petal
+                var s = this.size * 0.8;
+                ctx.beginPath();
+                ctx.ellipse(0, 0, s * 0.6, s, 0, 0, Math.PI * 2);
+                ctx.fillStyle = this.color.fill;
+                ctx.fill();
+                ctx.strokeStyle = this.color.stroke;
+                ctx.lineWidth = 0.4;
                 ctx.stroke();
             } else {
-                // Small sparkle dot
+                // Small sparkle / gold dust
                 ctx.beginPath();
-                ctx.arc(0, 0, this.size * 0.3, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(232, 212, 139, 0.8)';
+                ctx.arc(0, 0, this.size * 0.2, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(232, 212, 139, 0.7)';
                 ctx.fill();
+                ctx.shadowColor = 'rgba(201, 168, 76, 0.3)';
+                ctx.shadowBlur = 4;
             }
 
             ctx.restore();
         }
     }
 
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 85; i++) {
         particles.push(new Petal());
     }
 
